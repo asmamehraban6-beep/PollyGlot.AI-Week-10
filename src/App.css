@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #071a3a;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 430px;
+}
+
+
+/* ================= Header ================= */
+
+.header {
+  background: #071a3a;
+  padding: 25px 20px 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 30px 30px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 430px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* ================= Translator ================= */
+
+.translator-form {
+  background: #b4b4b4;
+  width: 100%;
+  padding: 30px 25px;
+  margin-top: 10px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 2px solid #0e4385;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.translator-form h2 {
+  text-align: center;
+  color: #222;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.translator-form h3 {
+  color: #333;
+  font-size: 18px;
+  margin: 25px 0 15px;
+}
+
+.translator-form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+
+.translator-form textarea:focus {
+  border-color: #4f46e5;
+}
+
+
+/* ================= Language ================= */
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.languages label {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.languages input {
+  margin-right: 10px;
+}
+
+
+/* ================= Buttons ================= */
+
+.translator-form button,
+.result-container button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.7;
+}
+
+
+/* ================= Loading Spinner ================= */
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ================= Translation Result ================= */
+
+.result-container {
+  background: #ffffff;
+  width: 100%;
+  padding: 30px 25px;
+  margin-top: 25px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 2px solid #0e4385;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.original-card,
+.translation-card {
+  background: #f9fafb;
+  border: 2px solid #0e4385;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 80px;
+  margin-bottom: 22px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.translation-card {
+  background: #eef8ff;
+  border-left: 5px solid #4f46e5;
+}
+
+.result-container button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.result-container button:hover {
+  background: #4338ca;
+}
+
+.translator-form h3,
+.result-container h2 {
+  color: #0356d3;
+  font-size: 18px;
+  font-weight: 700;
+}
+.translator-form button,
+.result-container button {
+  width: 100%;
+  padding: 16px;
+  background: #0356d3;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.translator-form button:hover,
+.result-container button:hover {
+  background: #0248b3;
+}
+.icons{
+   width: 25px;
+  height: 20px;
+  object-fit: cover;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.languages img {
+  width: 25px; 
+  height: 20px;
+  object-fit: cover;
+  margin-right: 10px;
+   vertical-align: middle;
+}
+.flag {
+  width: 28px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.france {
+  background: linear-gradient(
+    to right,
+    #0055a4 33%,
+    white 33%,
+    white 66%,
+    #ef4135 66%
+  );
+}
+
+.spain {
+  background: linear-gradient(
+    to bottom,
+    #aa151b 25%,
+    #f1bf00 25%,
+    #f1bf00 75%,
+    #aa151b 75%
+  );
+}
+
+.japan {
+  background: radial-gradient(circle, #bc002d 35%, white 36%);
+  border: 1px solid #ddd;
+}
