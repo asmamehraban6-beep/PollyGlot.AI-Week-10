@@ -26,3 +26,7 @@ dist-ssr
 .wrangler/
 desktop.ini
 wrangler.jsonc
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
