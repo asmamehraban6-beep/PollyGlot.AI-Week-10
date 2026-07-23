@@ -18,5 +18,5 @@ export async function translateText(text, language) {
 
   const data = await response.json();
 
-  return data.choices[0].message.content;
+  return data.translation;
 }

@@ -1,32 +1,30 @@
-export async function onRequestPost(context) {
-  const { request, env } = context;
-
+export async function onRequestPost({ request, env }) {
   const { text, language } = await request.json();
 
-  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "openai/gpt-oss-120b",
-      messages: [
-        {
-          role: "system",
-          content: `You are a translation assistant. Translate text into ${language}.`,
-        },
-        {
-          role: "user",
-          content: text,
-        },
-      ],
-      temperature: 0.5,
-      max_tokens: 100,
-    }),
-  });
+  const response = await fetch(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${env.OPENROUTER_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "openai/gpt-oss-120b",
+        messages: [
+          {
+            role: "user",
+            content: `Translate this text to ${language}: ${text}`,
+          },
+        ],
+      }),
+    }
+  );
 
   const data = await response.json();
+  console.log(data);
 
-  return Response.json(data);
+  return Response.json({
+    translation: data.choices?.[0]?.message?.content || "No translation received",
+  });
 }
