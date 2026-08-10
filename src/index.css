@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #071b2b;
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+}
